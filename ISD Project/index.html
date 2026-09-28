@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexusTech & Kingdom of Games | Computer Parts E-Commerce Store</title>
+  <meta name="description" content="Ultimate Computer Parts & Gaming Hardware E-Commerce Store. CPUs, GPUs, RAM, Motherboards, Liquid Cooling, and AI Shopping Assistant." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cyan: '#06b6d4',
+              purple: '#8b5cf6',
+              amber: '#f59e0b',
+              dark: '#0b0f19',
+              darker: '#060911'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Chart.js for Admin Analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Immediate Theme Initializer -->
+  <script>
+    (function() {
+      try {
+        var saved = JSON.parse(localStorage.getItem('nexustech_theme')) || 'dark';
+        if (saved === 'light') {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        } else {
+          document.documentElement.classList.remove('light');
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="bg-[#0b0f19] text-gray-100 antialiased selection:bg-cyan-500 selection:text-black">
+
+  <!-- ================= TOP HEADER & NAVBAR ================= -->
+  <div id="navbar-mount"></div>
+
+  <!-- ================= MAIN STOREFRONT VIEW ================= -->
+  <main id="storefront-view" class="transition-opacity duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      
+      <!-- Layout: Left Vertical Category Sidebar + Right Content Area -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- 🗂️ LEFT COLUMN: CATEGORIES (TOP TO BOTTOM) -->
+        <aside class="hidden lg:block lg:col-span-3 sticky top-24">
+          <div id="category-sidebar-mount"></div>
+        </aside>
+
+        <!-- 🚀 RIGHT COLUMN: HERO SHOWCASE -> FLASH DEALS -> KINGDOM OF GAMES -> ALL PRODUCTS -->
+        <section class="lg:col-span-9 space-y-2">
+          
+          <!-- 1. HERO SHOWCASE: 3 SIDE-BY-SIDE FLOATING CARDS (FEATURED, LATEST, BEST SELLER) -->
+          <div id="hero-showcase-mount"></div>
+
+          <!-- 2. DISCOUNTED PRODUCTS SHOWCASE (WITH COUNTDOWN TIMER) -->
+          <div id="discount-section-mount"></div>
+
+          <!-- 3. KINGDOM OF GAMES (HIGHLY RECOMMENDED GAMING SANCTUARY) -->
+          <div id="kingdom-games-mount"></div>
+
+          <!-- 4. MAIN PRODUCT CATALOG (FILTERS BY BRAND, PRICE, AVAILABILITY + PRODUCT GRID) -->
+          <div id="product-catalog-mount"></div>
+
+        </section>
+      </div>
+
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="mt-20 border-t border-slate-800/80 bg-slate-950/80 backdrop-blur-md pt-12 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800/80 text-xs">
+          <!-- Store Info -->
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <span class="font-gaming text-lg font-bold text-white">NEXUS<span class="text-cyan-400">TECH</span></span>
+            </div>
+            <p class="text-gray-400 leading-relaxed">
+              Your premier destination for authentic computer hardware, high-end custom liquid gaming rigs, and competitive esports gear.
+            </p>
+            <div class="text-[11px] text-cyan-400 font-semibold font-tech">
+              🎓 Southeast University CSE346 Information Systems Design Project
+            </div>
+          </div>
+
+          <!-- Quick Navigation -->
+          <div class="space-y-2.5">
+            <h4 class="font-gaming text-sm font-bold text-white uppercase tracking-wider">Fast Navigation</h4>
+            <ul class="space-y-1.5 text-gray-400">
+              <li><a href="#" onclick="window.navigateTo('store'); return false;" class="hover:text-cyan-400 transition">Storefront Home</a></li>
+              <li><a href="#kingdom-games-section" class="hover:text-purple-400 transition">Kingdom of Games Zone</a></li>
+              <li><a href="#discount-deals-section" class="hover:text-amber-400 transition">Deals & Discounts</a></li>
+              <li><button onclick="window.openStoreLocatorModal()" class="hover:text-cyan-400 transition">Find Physical Stores</button></li>
+            </ul>
+          </div>
+
+          <!-- Customer Service -->
+          <div class="space-y-2.5">
+            <h4 class="font-gaming text-sm font-bold text-white uppercase tracking-wider">Customer Support</h4>
+            <ul class="space-y-1.5 text-gray-400">
+              <li><button onclick="window.openOrderHistoryModal()" class="hover:text-cyan-400 transition">Track Active Orders</button></li>
+              <li><button onclick="window.openWishlistDrawer()" class="hover:text-pink-400 transition">Saved Parts Wishlist</button></li>
+              <li><span class="hover:text-gray-200 cursor-default">Official Brand Warranty Claim</span></li>
+              <li><span class="hover:text-gray-200 cursor-default">Return & Replacement Policy</span></li>
+              <li><span class="hover:text-gray-200 cursor-default">Custom PC Diagnostic Lab</span></li>
+            </ul>
+          </div>
+
+          <!-- Accepted Payment Methods -->
+          <div class="space-y-3">
+            <h4 class="font-gaming text-sm font-bold text-white uppercase tracking-wider">Payment Options</h4>
+            <p class="text-gray-400 text-[11px]">We accept all major secure payment channels with instant verification:</p>
+            <div class="flex flex-wrap gap-2 text-xl text-gray-300">
+              <span class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-blue-400" title="Visa"><i class="fa-brands fa-cc-visa"></i></span>
+              <span class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-500" title="MasterCard"><i class="fa-brands fa-cc-mastercard"></i></span>
+              <span class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-blue-300" title="PayPal"><i class="fa-brands fa-paypal"></i></span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-[11px] font-bold text-pink-400 flex items-center" title="bKash / Nagad">bKash / Nagad</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-[11px] font-bold text-emerald-400 flex items-center" title="Cash on Delivery">Cash on Delivery</span>
+            </div>
+            <div class="text-[11px] text-gray-500">
+              Hotline: <span class="text-gray-300 font-mono">+880 1700-000346</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-3">
+          <div>
+            &copy; 2026 NexusTech Computer Parts Ltd. Developed for SEU ISD CSE346 by Mithila, Farha, & Nafees.
+          </div>
+          <div class="flex items-center gap-4 flex-wrap">
+            <button onclick="window.openStoreLocatorModal()" class="text-cyan-400 hover:underline">
+              Tejgaon Campus Outlet
+            </button>
+            <span>•</span>
+            <button onclick="store.toggleTheme()" class="text-amber-400 hover:underline flex items-center gap-1 font-semibold">
+              <i class="fa-solid fa-circle-half-stroke"></i> Light / Dark Theme
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </main>
+
+  <!-- ================= ADMIN PORTAL VIEW ================= -->
+  <div id="admin-view" class="hidden min-h-screen"></div>
+
+  <!-- ================= FLOATING AI ASSISTANT ================= -->
+  <div id="ai-assistant-mount"></div>
+
+  <!-- ================= TOAST NOTIFICATIONS ================= -->
+  <div id="toast-container"></div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <!-- 1. Initial Database & Mock Store -->
+  <script src="js/data/initialData.js"></script>
+  <script src="js/data/store.js"></script>
+
+  <!-- 2. UI Components -->
+  <script src="js/components/Navbar.js"></script>
+  <script src="js/components/CategorySidebar.js"></script>
+  <script src="js/components/HeroShowcase.js"></script>
+  <script src="js/components/DiscountSection.js"></script>
+  <script src="js/components/KingdomOfGames.js"></script>
+  <script src="js/components/ProductCatalog.js"></script>
+  <script src="js/components/ProductModal.js"></script>
+  <script src="js/components/CartDrawer.js"></script>
+  <script src="js/components/CheckoutModal.js"></script>
+  <script src="js/components/UserAuthModal.js"></script>
+  <script src="js/components/StoreLocator.js"></script>
+  <script src="js/components/AiAssistant.js"></script>
+  <script src="js/components/AdminPortal.js"></script>
+  <script src="js/components/AdminModals.js"></script>
+
+  <!-- 3. App Initialization & Event Bridge -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>

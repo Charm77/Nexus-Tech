@@ -1,0 +1,690 @@
+/* Custom Styles for NexusTech & Kingdom of Games E-Commerce Platform */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700;800&family=Orbitron:wght@600;700;800;900&display=swap');
+
+:root {
+  --bg-primary: #0b0f19;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1f2937;
+  --bg-card: rgba(17, 24, 39, 0.85);
+  --border-color: rgba(75, 85, 99, 0.35);
+  --cyan-accent: #06b6d4;
+  --purple-accent: #8b5cf6;
+  --amber-accent: #f59e0b;
+  --red-accent: #ef4444;
+  --green-accent: #10b981;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: #f3f4f6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.font-tech {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.font-gaming {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+::-webkit-scrollbar-thumb {
+  background: #2d3748;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan-accent);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Neon Glows & Borders */
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.25);
+}
+
+.glow-purple {
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.25);
+}
+
+.glow-amber {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+}
+
+.glow-gaming {
+  box-shadow: 0 0 35px rgba(168, 85, 247, 0.35), 0 0 15px rgba(6, 182, 212, 0.25);
+}
+
+/* Animated RGB Border for Kingdom of Games */
+.rgb-border {
+  position: relative;
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  background-size: 300% 300%;
+  animation: rgbShift 6s ease alternate infinite;
+  padding: 2px;
+  border-radius: 1rem;
+}
+
+.rgb-border-inner {
+  background: #0f172a;
+  border-radius: calc(1rem - 2px);
+}
+
+@keyframes rgbShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating Card Hover Effect */
+.card-floating {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-floating:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.6), 0 0 25px rgba(6, 182, 212, 0.2);
+}
+
+/* Category Sidebar Item */
+.cat-nav-item {
+  transition: all 0.2s ease;
+  position: relative;
+}
+.cat-nav-item:hover, .cat-nav-item.active {
+  background: rgba(6, 182, 212, 0.12);
+  color: #22d3ee;
+  border-left: 3px solid #06b6d4;
+  padding-left: 1rem;
+}
+
+/* Subtle Grid Background Pattern */
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Gaming Scanlines Effect */
+.gaming-scanlines {
+  position: relative;
+  overflow: hidden;
+}
+.gaming-scanlines::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Badges & Pulsing */
+.pulse-badge {
+  animation: pulseNeon 2s infinite;
+}
+
+@keyframes pulseNeon {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+/* Modal Animation */
+.modal-enter {
+  animation: modalIn 0.25s ease-out forwards;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Product Card Image Zoom */
+.product-image-container {
+  overflow: hidden;
+}
+.product-image-container img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-floating:hover .product-image-container img {
+  transform: scale(1.08);
+}
+
+/* Checkout step progress */
+.step-bubble.active {
+  background: #06b6d4;
+  color: #000;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.6);
+}
+.step-bubble.completed {
+  background: #10b981;
+  color: #fff;
+}
+
+/* Floating AI Chat Bot */
+.ai-fab-button {
+  background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
+  box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.5), 0 0 20px rgba(6, 182, 212, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ai-fab-button:hover {
+  transform: scale(1.08) rotate(5deg);
+  box-shadow: 0 15px 35px -5px rgba(139, 92, 246, 0.7), 0 0 30px rgba(6, 182, 212, 0.6);
+}
+
+/* Toast Notifications */
+#toast-container {
+  position: fixed;
+  bottom: 5.5rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  pointer-events: none;
+}
+@media (min-width: 640px) {
+  #toast-container {
+    bottom: 1.5rem;
+    left: auto;
+    right: 1.5rem;
+    align-items: flex-end;
+  }
+}
+.toast-msg {
+  pointer-events: auto;
+  max-width: 100%;
+  animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   LIGHT MODE DESIGN SYSTEM & COLOR THEME OVERRIDES
+   ========================================================================== */
+
+/* Theme switching is instant — no transition/animation is applied while the
+   theme class is toggled (see store.applyTheme). This avoids the laggy repaint
+   animation that used to run across every card on the page. */
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition: none !important;
+  animation: none !important;
+}
+
+html.light {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.96);
+  --border-color: rgba(226, 232, 240, 0.9);
+  --cyan-accent: #0891b2;
+  --purple-accent: #7c3aed;
+  --amber-accent: #d97706;
+  color-scheme: light;
+}
+
+/* Light Mode Body & Canvas */
+html.light body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Background Grid Pattern in Light Mode */
+html.light .bg-grid-pattern {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.07) 1px, transparent 1px) !important;
+  background-size: 24px 24px;
+}
+
+/* Light Scrollbar */
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Header & Announcement Bar */
+html.light .top-announcement-bar,
+html.light .bg-gradient-to-r.from-slate-900 {
+  background: linear-gradient(90deg, #f8fafc 0%, #ede9fe 50%, #f0fdf4 100%) !important;
+  border-bottom-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+html.light header.sticky {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  border-bottom-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+}
+
+/* Panels, Cards & Glassmorphism */
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.03) !important;
+}
+
+html.light .glass-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.04) !important;
+}
+
+html.light .card-floating:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.1), 0 0 20px rgba(8, 145, 178, 0.15) !important;
+}
+
+/* Background Replacements */
+html.light .bg-slate-950,
+html.light .bg-slate-950\/90,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950\/60,
+html.light .bg-\[\#0b0f19\] {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-slate-900,
+html.light .bg-slate-900\/95,
+html.light .bg-slate-900\/90,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/70,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/40 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-slate-800,
+html.light .bg-slate-800\/80,
+html.light .bg-slate-800\/70,
+html.light .bg-slate-800\/60,
+html.light .bg-slate-800\/50,
+html.light .bg-slate-800\/40 {
+  background-color: #f1f5f9 !important;
+}
+
+html.light .bg-slate-700,
+html.light .bg-slate-700\/50 {
+  background-color: #e2e8f0 !important;
+}
+
+/* Borders in Light Mode */
+html.light .border-slate-800,
+html.light .border-slate-800\/80,
+html.light .border-slate-800\/60,
+html.light .border-slate-800\/40 {
+  border-color: #e2e8f0 !important;
+}
+
+html.light .border-slate-700,
+html.light .border-slate-700\/80,
+html.light .border-slate-700\/60,
+html.light .border-slate-700\/50 {
+  border-color: #cbd5e1 !important;
+}
+
+html.light .border-gray-700 {
+  border-color: #cbd5e1 !important;
+}
+
+/* Typography & Headings in Light Mode */
+html.light h1:not([class*="text-cyan"]):not([class*="text-purple"]):not([class*="text-amber"]):not([class*="text-emerald"]):not([class*="text-pink"]):not([class*="text-red"]),
+html.light h2:not([class*="text-cyan"]):not([class*="text-purple"]):not([class*="text-amber"]):not([class*="text-emerald"]):not([class*="text-pink"]):not([class*="text-red"]),
+html.light h3:not([class*="text-cyan"]):not([class*="text-purple"]):not([class*="text-amber"]):not([class*="text-emerald"]):not([class*="text-pink"]):not([class*="text-red"]),
+html.light h4:not([class*="text-cyan"]):not([class*="text-purple"]):not([class*="text-amber"]):not([class*="text-emerald"]):not([class*="text-pink"]):not([class*="text-red"]) {
+  color: #0f172a !important;
+}
+
+/* Text Colors (preserving white text on buttons & badges with solid background) */
+html.light .text-white:not([class*="bg-cyan-"]):not([class*="bg-purple-"]):not([class*="bg-pink-"]):not([class*="bg-emerald-"]):not([class*="bg-blue-"]):not([class*="bg-red-"]):not([class*="bg-amber-"]):not([class*="bg-gradient-"]):not(.badge-white):not(.keep-white),
+html.light .text-gray-100:not([class*="bg-cyan-"]):not([class*="bg-purple-"]):not([class*="bg-pink-"]):not([class*="bg-emerald-"]):not([class*="bg-blue-"]):not([class*="bg-red-"]):not([class*="bg-amber-"]):not([class*="bg-gradient-"]):not(.badge-white):not(.keep-white),
+html.light .text-gray-200:not([class*="bg-cyan-"]):not([class*="bg-purple-"]):not([class*="bg-pink-"]):not([class*="bg-emerald-"]):not([class*="bg-blue-"]):not([class*="bg-red-"]):not([class*="bg-amber-"]):not([class*="bg-gradient-"]):not(.badge-white):not(.keep-white) {
+  color: #0f172a !important;
+}
+
+html.light .text-gray-300:not([class*="bg-cyan-"]):not([class*="bg-purple-"]):not([class*="bg-pink-"]):not([class*="bg-emerald-"]):not([class*="bg-blue-"]):not([class*="bg-red-"]):not([class*="bg-amber-"]):not([class*="bg-gradient-"]):not(.badge-white):not(.keep-white) {
+  color: #334155 !important;
+}
+
+html.light .text-gray-400:not([class*="bg-cyan-"]):not([class*="bg-purple-"]):not([class*="bg-pink-"]):not([class*="bg-emerald-"]):not([class*="bg-blue-"]):not([class*="bg-red-"]):not([class*="bg-amber-"]):not([class*="bg-gradient-"]) {
+  color: #64748b !important;
+}
+
+html.light .text-gray-500 {
+  color: #64748b !important;
+}
+
+/* High Contrast Accent Colors for Light Canvas */
+html.light .text-cyan-400 {
+  color: #0891b2 !important;
+}
+html.light .text-cyan-300 {
+  color: #0e7490 !important;
+}
+html.light .text-purple-400 {
+  color: #7c3aed !important;
+}
+html.light .text-purple-300 {
+  color: #6d28d9 !important;
+}
+html.light .text-amber-400 {
+  color: #d97706 !important;
+}
+html.light .text-amber-300 {
+  color: #b45309 !important;
+}
+html.light .text-emerald-400 {
+  color: #059669 !important;
+}
+html.light .text-emerald-300 {
+  color: #047857 !important;
+}
+
+/* Search Bar Input & Autocomplete Dropdown */
+html.light #navbar-search-wrapper > div {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+html.light #navbar-search-wrapper > div:focus-within {
+  background-color: #ffffff !important;
+  border-color: #0891b2 !important;
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.15) !important;
+}
+html.light #navbar-search-input {
+  color: #0f172a !important;
+}
+html.light #navbar-search-input::placeholder {
+  color: #94a3b8 !important;
+}
+html.light #search-suggestions-popover {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 10px 10px -5px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Category Sidebar Navigation */
+html.light .cat-nav-item {
+  color: #334155 !important;
+}
+html.light .cat-nav-item:hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+html.light .cat-nav-item.active {
+  background: #ecfeff !important;
+  color: #0891b2 !important;
+  border-left: 3px solid #0891b2 !important;
+  font-weight: 700 !important;
+}
+html.light .cat-nav-item span {
+  color: inherit;
+}
+
+/* Kingdom of Games Zone in Light Mode (White Mecha BattleStation Edition) */
+html.light .rgb-border-inner {
+  background: #ffffff !important;
+}
+html.light .rgb-border-inner .bg-slate-900,
+html.light .rgb-border-inner .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+html.light .gaming-scanlines::after {
+  background: linear-gradient(rgba(240, 240, 240, 0) 50%, rgba(200, 200, 200, 0.1) 50%) !important;
+}
+
+/* Product Cards, Badges & Price Tagging */
+html.light .product-card,
+html.light #catalog-grid-section .glass-panel {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+html.light #catalog-filters-container .glass-panel {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Form Inputs, Selects & Sliders */
+html.light input[type="text"],
+html.light input[type="password"],
+html.light input[type="email"],
+html.light input[type="tel"],
+html.light input[type="number"],
+html.light textarea,
+html.light select {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+html.light input[type="range"] {
+  background-color: #e2e8f0 !important;
+}
+html.light select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* Modals & Backdrop */
+html.light .fixed.inset-0.bg-slate-950\/80,
+html.light .fixed.inset-0.bg-black\/80 {
+  background-color: rgba(15, 23, 42, 0.45) !important;
+  backdrop-filter: blur(4px);
+}
+html.light #product-modal-container .glass-panel,
+html.light #auth-modal-container .glass-panel,
+html.light #checkout-modal-container .glass-panel,
+html.light #store-locator-container .glass-panel,
+html.light #admin-modal-container .glass-panel {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Cart Slide-Over Drawer */
+html.light #cart-drawer-container .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-left-color: #e2e8f0 !important;
+}
+
+/* Mobile Category Drawer */
+html.light #mobile-category-drawer .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-right-color: #e2e8f0 !important;
+}
+
+/* AI Assistant Window */
+html.light #ai-assistant-window {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.12) !important;
+}
+html.light #ai-assistant-window .bg-slate-950,
+html.light #ai-assistant-window .bg-slate-900 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Admin Portal */
+html.light #admin-view {
+  background-color: #f8fafc !important;
+}
+html.light #admin-view .bg-slate-950,
+html.light #admin-view .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+html.light #admin-view table th {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  border-color: #e2e8f0 !important;
+}
+html.light #admin-view table td {
+  border-color: #e2e8f0 !important;
+}
+html.light #admin-view table tr:hover td {
+  background-color: #f8fafc !important;
+}
+
+/* Footer in Light Mode */
+html.light footer {
+  background: #ffffff !important;
+  border-top-color: #e2e8f0 !important;
+}
+html.light footer .border-b {
+  border-bottom-color: #e2e8f0 !important;
+}
+
+/* Toast Notifications in Light Mode */
+html.light .toast-msg {
+  background: #ffffff !important;
+  border-color: #0891b2 !important;
+  color: #0f172a !important;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.15) !important;
+}
+
+/* ================= CONTAINED SCROLL REGIONS ================= */
+/* Category sidebar & filter panels scroll on their own and never
+   hand the scroll back to the page underneath the product grid. */
+.scroll-contain {
+  overscroll-behavior: contain;
+  overscroll-behavior-y: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+.scroll-contain::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scroll-contain::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-contain::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 999px;
+}
+.scroll-contain::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan-accent, #22d3ee);
+}
+
+/* ================= BUDGET RANGE SLIDER ================= */
+.nexus-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+  cursor: pointer;
+  touch-action: pan-y;
+}
+.nexus-range:focus {
+  outline: none;
+}
+.nexus-range::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    #22d3ee 0%,
+    #a855f7 var(--pct, 50%),
+    #1e293b var(--pct, 50%),
+    #1e293b 100%
+  );
+}
+.nexus-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  margin-top: -6px;
+  border-radius: 50%;
+  background: #ecfeff;
+  border: 3px solid #22d3ee;
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.15), 0 2px 6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.nexus-range:hover::-webkit-slider-thumb {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 6px rgba(34, 211, 238, 0.22), 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+.nexus-range:active::-webkit-slider-thumb {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 8px rgba(34, 211, 238, 0.28), 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+.nexus-range:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 7px rgba(34, 211, 238, 0.35), 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+.nexus-range::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: #1e293b;
+}
+.nexus-range::-moz-range-progress {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #22d3ee, #a855f7);
+}
+.nexus-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ecfeff;
+  border: 3px solid #22d3ee;
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.15);
+}
+html.light input[type="range"].nexus-range {
+  background-color: transparent !important;
+}
+html.light .nexus-range::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to right,
+    #0891b2 0%,
+    #7c3aed var(--pct, 50%),
+    #e2e8f0 var(--pct, 50%),
+    #e2e8f0 100%
+  );
+}
+html.light .nexus-range::-moz-range-track {
+  background: #e2e8f0;
+}
+html.light .nexus-range::-moz-range-progress {
+  background: linear-gradient(to right, #0891b2, #7c3aed);
+}
